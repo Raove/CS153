@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="untitled1" targetName="untitled1" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="29bf04c7-8b01-4d7a-bb44-53049de02469" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/CS153" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="DhjRpuxy" />
+  </component>
+  <component name="ProjectId" id="1aDaQcSJve0FcT0ATfg4YBC1BVI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.XML" />
+  </component>
+  <component name="RunManager">
+    <configuration name="gdb-remote" type="CLion_Remote" remoteCommand="localhost:27181 " symbolFile="$PROJECT_DIR$/kernel" sysroot="$PROJECT_DIR$">
+      <pathMapping remote=":/home/csmajs/rlari006/xv6" local="/Users/raoul/CLionProjects/untitled1" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="29bf04c7-8b01-4d7a-bb44-53049de02469" name="Default Changelist" comment="" />
+      <created>1586272602624</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586272602624</updated>
+      <workItem from="1586272605595" duration="7675000" />
+      <workItem from="1586475375850" duration="221000" />
+      <workItem from="1586491435110" duration="263000" />
+      <workItem from="1586829166253" duration="179000" />
+      <workItem from="1586877433888" duration="1371000" />
+      <workItem from="1587338480964" duration="749000" />
+      <workItem from="1587349463835" duration="4990000" />
+      <workItem from="1587481913864" duration="2143000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="Makefile" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="822" y="310" key="#Deployment" timestamp="1587352594070">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="822" y="310" key="#Deployment/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1587352594070" />
+    <state x="198" y="348" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586877487348">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="198" y="348" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1586877487348" />
+    <state x="527" y="287" width="1094" height="893" key="DiffContextDialog" timestamp="1587339114276">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="527" y="287" width="1094" height="893" key="DiffContextDialog/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1587339114276" />
+    <state x="1273" y="112" width="1094" height="1207" key="DirDiffDialog" timestamp="1586278472643">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1273" y="112" width="1094" height="1207" key="DirDiffDialog/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1586278472643" />
+    <state x="1700" y="459" key="FileChooserDialogImpl" timestamp="1586278648229">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1700" y="459" key="FileChooserDialogImpl/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1586278648229" />
+    <state width="1234" height="491" key="GridCell.Tab.0.bottom" timestamp="1586280347472">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="491" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1586280347472" />
+    <state width="1234" height="491" key="GridCell.Tab.0.center" timestamp="1586280347471">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="491" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1586280347471" />
+    <state width="1234" height="491" key="GridCell.Tab.0.left" timestamp="1586280347471">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="491" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1586280347471" />
+    <state width="1234" height="491" key="GridCell.Tab.0.right" timestamp="1586280347471">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="491" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1586280347471" />
+    <state width="1234" height="491" key="GridCell.Tab.1.bottom" timestamp="1586280347472">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="491" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1586280347472" />
+    <state width="1234" height="491" key="GridCell.Tab.1.center" timestamp="1586280347472">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="491" key="GridCell.Tab.1.center/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1586280347472" />
+    <state width="1234" height="491" key="GridCell.Tab.1.left" timestamp="1586280347472">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="491" key="GridCell.Tab.1.left/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1586280347472" />
+    <state width="1234" height="491" key="GridCell.Tab.1.right" timestamp="1586280347472">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="491" key="GridCell.Tab.1.right/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1586280347472" />
+    <state x="1421" y="346" key="SettingsEditor" timestamp="1587352470356">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1421" y="346" key="SettingsEditor/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1587352470356" />
+    <state x="1616" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1587481917758">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1616" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1587481917758" />
+    <state x="819" y="73" width="737" height="1269" key="find.popup" timestamp="1587483536451">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="819" y="73" width="737" height="1269" key="find.popup/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1587483536451" />
+    <state x="954" y="480" key="ftp.server.browser" timestamp="1586273932753">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="954" y="480" key="ftp.server.browser/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1586273932753" />
+    <state x="872" y="359" key="scopes" timestamp="1587354937072">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="359" key="scopes/0.0.2560.1400/-1920.189.1920.1040@0.0.2560.1400" timestamp="1587354937072" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/proc.c</url>
+          <line>375</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
