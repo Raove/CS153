@@ -33,7 +33,7 @@ sys_wait(void)
     }
     return wait(status);
 }
-
+//TA explained during discussion and said just copy the wait above and add pid
 int
 sys_waitpid(void)
 {
