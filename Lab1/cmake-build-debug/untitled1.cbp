@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/raoul/CLionProjects/CS153/Lab1/lab1.c">
+			<Option target="untitled1"/>
+		</Unit>
 		<Unit filename="C:/Users/raoul/CLionProjects/CS153/Lab1/main.cpp">
 			<Option target="untitled1"/>
 		</Unit>
