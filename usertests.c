@@ -402,7 +402,7 @@ preempt(void)
 
 // try to find any races between exit and wait
 void
-exitwait(int *)
+exitwait(void)
 {
   int i, pid;
 
@@ -1782,7 +1782,7 @@ main(int argc, char *argv[])
   mem();
   pipe1();
   preempt();
-  exitwait(0);
+  exitwait();
 
   rmdot();
   fourteen();
