@@ -1,26 +1,22 @@
 #include "types.h"
 #include "user.h"
 
-int exitWait(void);
-int waitPid(void);
-int waitpid(int, int*, int);
-
 int main(int argc, char *argv[])
 {
-    int exitWait(void);
-    int waitPid(void);
+    int exitWaitTest(void);
+    int waitPidTest(void);
     printf(1, "\n This program tests the correctness of your lab#1\n");
     if (atoi(argv[1]) == 1)
-        exitWait();
+        exitWaitTest();
     else if (atoi(argv[1]) == 2)
-        waitPid();
+        waitPidTest();
     else
         printf(1, "\ntype \"lab1 1\" to test exit and wait, \"lab1 2\" to test waitpid \n");
     // End of test
     exit(0);
 }
 
-int exitWait(void) {
+int exitWaitTest(void) {
     int pid, ret_pid, exit_status;
     int i;
     // use this part to test exit(int status) and wait(int* status)
@@ -50,7 +46,7 @@ int exitWait(void) {
     return 0;
 }
 
-int waitPid(void){
+int waitPidTest(void){
     int ret_pid, exit_status;
     int i;
     int pid_a[5]={0, 0, 0, 0, 0};
