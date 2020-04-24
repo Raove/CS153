@@ -99,7 +99,7 @@ main(int argc, char *argv[])
   preempt();
       da:	e8 71 0b 00 00       	call   c50 <preempt>
       df:	90                   	nop
-  exitwait(0);
+  exitwait();
       e0:	e8 cb 0c 00 00       	call   db0 <exitwait>
 
   rmdot();
