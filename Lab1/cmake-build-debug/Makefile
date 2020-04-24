@@ -124,6 +124,33 @@ untitled1\fast:
 	$(MAKE) -f CMakeFiles\untitled1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\untitled1.dir\build
 .PHONY : untitled1\fast
 
+lab1.obj: lab1.c.obj
+
+.PHONY : lab1.obj
+
+# target to build an object file
+lab1.c.obj:
+	$(MAKE) -f CMakeFiles\untitled1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\untitled1.dir\lab1.c.obj
+.PHONY : lab1.c.obj
+
+lab1.i: lab1.c.i
+
+.PHONY : lab1.i
+
+# target to preprocess a source file
+lab1.c.i:
+	$(MAKE) -f CMakeFiles\untitled1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\untitled1.dir\lab1.c.i
+.PHONY : lab1.c.i
+
+lab1.s: lab1.c.s
+
+.PHONY : lab1.s
+
+# target to generate assembly for a file
+lab1.c.s:
+	$(MAKE) -f CMakeFiles\untitled1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\untitled1.dir\lab1.c.s
+.PHONY : lab1.c.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -187,6 +214,9 @@ help:
 	@echo ... untitled1
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... lab1.obj
+	@echo ... lab1.i
+	@echo ... lab1.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
