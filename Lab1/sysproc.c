@@ -7,6 +7,8 @@
 #include "mmu.h"
 #include "proc.h"
 
+int waitpid(int, int*, int);
+
 int
 sys_fork(void)
 {
@@ -44,7 +46,6 @@ sys_waitpid(void)
     }
     return waitpid(pid, status, 0);
 }
-
 int
 sys_kill(void)
 {
