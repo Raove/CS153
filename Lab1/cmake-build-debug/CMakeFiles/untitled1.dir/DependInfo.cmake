@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "C:/Users/raoul/CLionProjects/CS153/Lab1/lab1.c" "C:/Users/raoul/CLionProjects/CS153/Lab1/cmake-build-debug/CMakeFiles/untitled1.dir/lab1.c.obj"
   "C:/Users/raoul/CLionProjects/CS153/Lab1/test.c" "C:/Users/raoul/CLionProjects/CS153/Lab1/cmake-build-debug/CMakeFiles/untitled1.dir/test.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "MSVC")
