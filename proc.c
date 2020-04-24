@@ -224,9 +224,6 @@ fork(void)
 // Exit the current process.  Does not return.
 // An exited process remains in the zombie state
 // until its parent calls wait() to find out it exited.
-/* MODIFIED: Lab 1 Part A
-   Updated to void exit(int status)   
-*/
 void
 exit(int status)
 {
@@ -273,9 +270,6 @@ exit(int status)
 
 // Wait for a child process to exit and return its pid.
 // Return -1 if this process has no children.
-/* MODIFIED: Lab 1 Part B
-   Updated to int wait(int *status)   
-*/
 int
 wait(int *status)
 {
@@ -320,7 +314,6 @@ wait(int *status)
   }
 }
 
-/* ADDED: Lab 1 Part C */
 int
 waitpid(int pid, int *status, int options)
 {
