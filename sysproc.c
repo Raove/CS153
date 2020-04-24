@@ -13,17 +13,41 @@ sys_fork(void)
   return fork();
 }
 
+/* MODIFIED: Lab 1 Part A
+*/
 int
-sys_exit(int)
+sys_exit(void)
 {
-  exit(0);
+  int status;
+  if(argint(0, &status) < 0){
+    return -1;
+  }
+  exit(status);
   return 0;  // not reached
 }
 
+/* MODIFED: Lab 1 Part B
+*/
 int
 sys_wait(void)
 {
-  return wait(0);
+  int *status;
+  if( argptr(0, (char**)&status, sizeof(status)) < 0){
+    return -1;
+  }
+  return wait(status);
+}
+
+/* ADDED: Lab 1 Part C */
+int
+sys_waitpid(void)
+{
+  int *status;
+  int pid = 0;
+  if( argptr(1, (char**)&status, sizeof(*status)) < 0){
+    return -1;
+  }
+  return waitpid(pid, status, 0);
 }
 
 int
