@@ -1,10 +1,11 @@
 #include "types.h"
 #include "user.h"
 
+int exitWaitTest(void);
+int waitPidTest(void);
+
 int main(int argc, char *argv[])
 {
-    int exitWaitTest(void);
-    int waitPidTest(void);
     printf(1, "\n This program tests the correctness of your lab#1\n");
     if (atoi(argv[1]) == 1)
         exitWaitTest();
