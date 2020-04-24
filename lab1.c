@@ -1,7 +1,7 @@
 #include "user.h"
-
-// #include <sys/wait.h>
-// #include <time.h>
+#include "types.h"
+#include <sys/wait.h>
+#include <time.h>
 
 int main() {
     int child_pid, end_id, status;
