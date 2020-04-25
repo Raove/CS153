@@ -13,8 +13,6 @@ sys_fork(void)
   return fork();
 }
 
-/* MODIFIED: Lab 1 Part A
-*/
 int
 sys_exit(void)
 {
@@ -26,8 +24,6 @@ sys_exit(void)
   return 0;  // not reached
 }
 
-/* MODIFED: Lab 1 Part B
-*/
 int
 sys_wait(void)
 {
@@ -38,7 +34,6 @@ sys_wait(void)
   return wait(status);
 }
 
-/* ADDED: Lab 1 Part C */
 int
 sys_waitpid(void)
 {
