@@ -10258,7 +10258,7 @@ sys_exit(void)
 80105220:	55                   	push   %ebp
 80105221:	89 e5                	mov    %esp,%ebp
 80105223:	83 ec 08             	sub    $0x8,%esp
-  exit(0);
+  exit();
 80105226:	e8 75 e8 ff ff       	call   80103aa0 <exit>
   return 0;  // not reached
 }
@@ -10274,10 +10274,10 @@ sys_wait(void)
 {
 80105230:	55                   	push   %ebp
 80105231:	89 e5                	mov    %esp,%ebp
-  return wait(0);
+  return wait();
 }
 80105233:	5d                   	pop    %ebp
-  return wait(0);
+  return wait();
 80105234:	e9 77 ea ff ff       	jmp    80103cb0 <wait>
 80105239:	8d b4 26 00 00 00 00 	lea    0x0(%esi,%eiz,1),%esi
 
@@ -10643,7 +10643,7 @@ trap(struct trapframe *tf)
 801054bf:	83 f8 40             	cmp    $0x40,%eax
 801054c2:	0f 84 a0 01 00 00    	je     80105668 <trap+0x1b8>
     if(myproc()->killed)
-      exit(0);
+      exit();
     return;
   }
 
@@ -10731,7 +10731,7 @@ rcr2(void)
 8010556e:	8b 50 24             	mov    0x24(%eax),%edx
 80105571:	85 d2                	test   %edx,%edx
 80105573:	75 4b                	jne    801055c0 <trap+0x110>
-    exit(0);
+    exit();
 
   // Force process to give up CPU on clock tick.
   // If interrupts were on while locks held, would need to check nlock.
@@ -10759,7 +10759,7 @@ rcr2(void)
 801055a4:	83 e0 03             	and    $0x3,%eax
 801055a7:	66 83 f8 03          	cmp    $0x3,%ax
 801055ab:	0f 84 e8 00 00 00    	je     80105699 <trap+0x1e9>
-    exit(0);
+    exit();
 }
 801055b1:	83 c4 3c             	add    $0x3c,%esp
 801055b4:	5b                   	pop    %ebx
@@ -10773,7 +10773,7 @@ rcr2(void)
 801055c4:	83 e0 03             	and    $0x3,%eax
 801055c7:	66 83 f8 03          	cmp    $0x3,%ax
 801055cb:	75 a8                	jne    80105575 <trap+0xc5>
-    exit(0);
+    exit();
 801055cd:	e8 ce e4 ff ff       	call   80103aa0 <exit>
 801055d2:	eb a1                	jmp    80105575 <trap+0xc5>
 801055d4:	8d 74 26 00          	lea    0x0(%esi,%eiz,1),%esi
@@ -10850,10 +10850,10 @@ rcr2(void)
 8010569d:	5e                   	pop    %esi
 8010569e:	5f                   	pop    %edi
 8010569f:	5d                   	pop    %ebp
-      exit(0);
+      exit();
 801056a0:	e9 fb e3 ff ff       	jmp    80103aa0 <exit>
 801056a5:	8d 76 00             	lea    0x0(%esi),%esi
-      exit(0);
+      exit();
 801056a8:	e8 f3 e3 ff ff       	call   80103aa0 <exit>
 801056ad:	eb cd                	jmp    8010567c <trap+0x1cc>
 801056af:	90                   	nop
