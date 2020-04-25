@@ -16,14 +16,28 @@ sys_fork(void)
 int
 sys_exit(void)
 {
-  exit();
+  exit(0);
   return 0;  // not reached
 }
 
 int
 sys_wait(void)
 {
-  return wait();
+    int *p;
+    argptr(0, (char**)&p, sizeof(int*));
+    return wait(p);
+}
+
+int
+sys_waitpid(void)
+{
+    int pid;
+    int *status;
+    int p;
+    argint(0, &pid);
+    argptr(1, (char**) &status, sizeof(int*));
+    argint(2, &p);
+    return waitpid(pid, status, p);
 }
 
 int
