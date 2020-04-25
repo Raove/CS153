@@ -316,8 +316,7 @@ wait(int *status)
   }
 }
 
-int
-waitpid(int pid, int *status, int options)
+int waitpid(int pid, int *status, int options)
 {
   struct proc *p;
   int havekids;
