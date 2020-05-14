@@ -9,7 +9,7 @@ int main()
     int j;
     for(i = 0; i < 43000; i++){
         asm("nop");
-        for(j = 0; j < 43000; j++){
+        for(j = 0; j < 3000; j++){
             asm("nop");
         }
     }

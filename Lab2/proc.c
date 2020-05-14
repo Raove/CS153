@@ -88,7 +88,9 @@ allocproc(void)
     found:
     p->state = EMBRYO;
     p->pid = nextpid++;
-
+    p->creationtime = ticks;
+    p->starttime = 0;
+    p->finishtime = 0;
     release(&ptable.lock);
 
     // Allocate kernel stack.
@@ -252,6 +254,12 @@ exit(int status)
     // Parent might be sleeping in wait(0).
     wakeup1(curproc->parent);
 
+    uint turnaroundtime = curproc->finishtime - curproc->creationtime;
+    cprintf("Turnaround time is: %d \n", turnaroundtime);
+    uint waittime = curproc->starttime - curproc->creationtime;
+    cprintf("Wait time is: %d \n", waittime);
+    uint executiontime = curproc->finishtime - curproc->starttime;
+    cprintf("Execution time is: %d \n", executiontime);
     // Pass abandoned children to init.
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
         if(p->parent == curproc){
@@ -393,7 +401,7 @@ scheduler(void)
         current_priority = 31;
         sti();
         acquire(&ptable.lock);
-        for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) { //find high priority tasks
+        for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
             if(p->state != RUNNABLE)
                 continue;
             if(p->priority < current_priority) {
@@ -401,16 +409,18 @@ scheduler(void)
             }
         }
 
-        for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) { //executing those tasks
+        for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
             if (p->state != RUNNABLE)
                 continue;
             else if(p->priority == current_priority) {
                 c->proc = p;
                 switchuvm(p);
                 p->state = RUNNING;
+                p->starttime = ticks;
                 if(p->priority < 31)
                     p->priority++;
                 swtch(&(c->scheduler), p->context);
+                p->finishtime = ticks;
                 switchkvm();
                 c->proc = 0;
             } else if(p->priority > current_priority && p->priority > 1){
