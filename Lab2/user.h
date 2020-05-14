@@ -6,7 +6,7 @@ int fork(void);
 void exit(int) __attribute__((noreturn));
 int wait(int*);
 int waitpid(int, int*, int);
-void setpriority(int, int);
+void setpriority(int);
 int getpriority(void);
 int pipe(int*);
 int write(int, const void*, int);

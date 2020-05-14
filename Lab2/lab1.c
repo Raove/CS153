@@ -20,7 +20,9 @@ int waitPidTest(void){
         pid_a[i] = fork();
         if (pid_a[i] == 0) {
             printf(1, "\nChild with PID# %d and will exit with %d on status\n", getpid(), 0);
-            exit(0);}}
+            exit(0);
+        }
+    }
     sleep(5);
     printf(1, "\n Parent: Waiting for child with PID# %d\n",pid_a[3]);
     ret_pid = waitpid(pid_a[3], &exit_status, options);

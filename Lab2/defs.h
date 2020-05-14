@@ -114,7 +114,7 @@ void            pinit(void);
 void            procdump(void);
 void            scheduler(void) __attribute__((noreturn));
 void            sched(void);
-void            setpriority(int, int);
+void            setpriority(int);
 int             getpriority(void);
 void            donate(int, int);
 void            setproc(struct proc*);
