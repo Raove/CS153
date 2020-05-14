@@ -16,28 +16,58 @@ sys_fork(void)
 int
 sys_exit(void)
 {
-  exit(0);
+  int status;
+  argint(0, &status);
+  exit(status);
   return 0;  // not reached
 }
 
 int
 sys_wait(void)
 {
-    int *p;
-    argptr(0, (char**)&p, sizeof(int*));
-    return wait(p);
+  int *p;
+  argptr(0, (char**)&p, sizeof(int*));
+  return wait(p);
 }
 
 int
 sys_waitpid(void)
 {
-    int pid;
-    int *status;
-    int p;
-    argint(0, &pid);
-    argptr(1, (char**) &status, sizeof(int*));
-    argint(2, &p);
-    return waitpid(pid, status, p);
+  int pid;
+  int *status;
+  int p;
+  argint(0, &pid);
+  argptr(1, (char**) &status, sizeof(int*));
+  argint(2, &p);
+  return waitpid(pid, status, p);
+}
+
+int
+sys_setpriority(void)
+{
+  int pid;
+  int priority;
+  argint(0, &pid);
+  argint(1, &priority);
+  setpriority(pid, priority);
+  return 0;
+}
+
+int
+sys_getpriority(void)
+{
+  return getpriority();
+}
+
+int
+sys_donate(void)
+{
+  int pid;
+  int donation;
+  argint(0, &pid);
+  argint(1, &donation);
+  donate(pid, donation);
+  return 0;
 }
 
 int
