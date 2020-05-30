@@ -17,7 +17,7 @@ main(int argc, char *argv[])
     int n, m;
 
     if(argc != 2){
-        printf(1, "Usage: %s levels\n", argv[0]);
+        printf(1, "Number of levels: %s\n", argv[0]);
         exit(0);
     }
 
