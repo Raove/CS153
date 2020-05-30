@@ -47,6 +47,14 @@ trap(struct trapframe *tf)
   }
 
   switch(tf->trapno){
+  case T_PGFLT:
+      if (allocuvm(myproc()->pgdir, PGROUNDDOWN(rcr2()), PGROUNDDOWN(rcr2()) + PGSIZE) == 0) {
+          cprintf("T_PGFLT: allocuvm FAILED. Allocated pages: %d\n", myproc()->stack_pages);
+          exit(1);
+      }
+      myproc()->stack_pages++;
+      cprintf("T_PGFLT: allocuvm SUCCESS. Allocated pages: %d\n", myproc()->stack_pages);
+      break;
   case T_IRQ0 + IRQ_TIMER:
     if(cpuid() == 0){
       acquire(&tickslock);

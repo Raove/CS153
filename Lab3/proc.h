@@ -54,6 +54,7 @@ struct proc {
     uint starttime;
     uint finishtime;
     uint creationtime;
+    uint stack_pages;            // Amount of pages growing in the stack
 };
 
 // Process memory is laid out contiguously, low addresses first:
