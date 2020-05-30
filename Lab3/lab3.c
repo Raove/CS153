@@ -24,6 +24,6 @@ main(int argc, char *argv[])
     n = atoi(argv[1]);
     printf(1, "Lab 3: Recurse %d times\n", n);
     m = recurse(n);
-    printf(1, "Lab 3: Yielded a value of %d\n", m);
+    printf(1, "Lab 3: Gives us a value of %d\n", m);
     exit(0);
 }
