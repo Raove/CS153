@@ -333,11 +333,11 @@ copyuvm(pde_t *pgdir, uint sz, uint stack_size)
             goto bad;
         memmove(mem, (char*)P2V(pa), PGSIZE);
         if(mappages(d, (void*)i, PGSIZE, V2P(mem), flags) < 0) {
+            kfree(mem);
             goto bad;
         }
     }
 
-    //handles allocation of address space (for pages) on the growing stack
     for(i = KERNBASE - PGSIZE; stack_size > 0; i -= PGSIZE, stack_size--){
         if((pte = walkpgdir(pgdir, (void *) i, 0)) == 0)
             panic("copyuvm: pte should exist");

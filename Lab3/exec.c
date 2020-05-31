@@ -62,8 +62,8 @@ exec(char *path, char **argv)
 
   // Allocate two pages at the next page boundary.
   // Make the first inaccessible.  Use the second as the user stack.
-  sz = STACK - PGSIZE;
-  if((sz = allocuvm(pgdir, sz, STACK)) == 0)
+  uint new_stack = STACK - PGSIZE;
+  if((new_stack = allocuvm(pgdir, new_stack, STACK)) == 0)
     goto bad;
   //clearpteu(pgdir, (char*)(sz - 2*PGSIZE));
   sp = STACK;
@@ -98,6 +98,7 @@ exec(char *path, char **argv)
   curproc->pgdir = pgdir;
   curproc->sz = sz;
   curproc->stack_pages = 1;
+  cprintf("Allocated pages by the process: %d\n", curproc->stack_pages);
   curproc->tf->eip = elf.entry;  // main
   curproc->tf->esp = sp;
   switchuvm(curproc);

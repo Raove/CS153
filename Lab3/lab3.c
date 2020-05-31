@@ -1,29 +1,11 @@
 #include "types.h"
 #include "user.h"
-#pragma GCC push_options
-#pragma GCC optimize ("O0")
-static int
-recurse(int n)
-{
-    if(n == 0)
-        return 0;
-    return n + recurse(n - 1);
-}
-#pragma GCC pop_options
 
+const int SIZE = 33745;
 int
 main(int argc, char *argv[])
 {
-    int n, m;
-
-    if(argc != 2){
-        printf(1, "Number of levels: %s\n", argv[0]);
-        exit(0);
-    }
-
-    n = atoi(argv[1]);
-    printf(1, "Lab 3: Recurse %d times\n", n);
-    m = recurse(n);
-    printf(1, "Lab 3: Gives us a value of %d\n", m);
+    char buffer[SIZE];
+    memset(buffer, 0, SIZE);
     exit(0);
 }

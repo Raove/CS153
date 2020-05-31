@@ -254,12 +254,12 @@ exit(int status)
     // Parent might be sleeping in wait(0).
     wakeup1(curproc->parent);
 
-    uint turnaroundtime = curproc->finishtime - curproc->creationtime;
-    cprintf("Turnaround time is: %d \n", turnaroundtime);
-    uint waittime = curproc->starttime - curproc->creationtime;
-    cprintf("Wait time is: %d \n", waittime);
-    uint executiontime = curproc->finishtime - curproc->starttime;
-    cprintf("Execution time is: %d \n", executiontime);
+    //uint turnaroundtime = curproc->finishtime - curproc->creationtime;
+    //cprintf("Turnaround time is: %d \n", turnaroundtime);
+    //uint waittime = curproc->starttime - curproc->creationtime;
+    //cprintf("Wait time is: %d \n", waittime);
+    //uint executiontime = curproc->finishtime - curproc->starttime;
+    //cprintf("Execution time is: %d \n", executiontime);
     // Pass abandoned children to init.
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
         if(p->parent == curproc){
