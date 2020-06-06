@@ -38,25 +38,15 @@ trap(struct trapframe *tf)
 {
   if(tf->trapno == T_SYSCALL){
     if(myproc()->killed)
-      exit(0);
+      exit();
     myproc()->tf = tf;
     syscall();
     if(myproc()->killed)
-      exit(0);
+      exit();
     return;
   }
 
   switch(tf->trapno){
-  case T_PGFLT:
-      if(PGROUNDDOWN(rcr2()) > (myproc()->tf->esp - PGSIZE)) {
-          if (allocuvm(myproc()->pgdir, PGROUNDDOWN(rcr2()), PGROUNDDOWN(rcr2()) + PGSIZE) == 0) {
-              cprintf("T_PGFLT: allocuvm FAILED. Allocated pages: %d\n", myproc()->stack_pages);
-              exit(1);
-          }
-      }
-      myproc()->stack_pages++;
-      cprintf("T_PGFLT: allocuvm SUCCESS. Allocated pages: %d\n", myproc()->stack_pages);
-      break;
   case T_IRQ0 + IRQ_TIMER:
     if(cpuid() == 0){
       acquire(&tickslock);
@@ -108,7 +98,7 @@ trap(struct trapframe *tf)
   // (If it is still executing in the kernel, let it keep running
   // until it gets to the regular system call return.)
   if(myproc() && myproc()->killed && (tf->cs&3) == DPL_USER)
-    exit(0);
+    exit();
 
   // Force process to give up CPU on clock tick.
   // If interrupts were on while locks held, would need to check nlock.
@@ -118,5 +108,5 @@ trap(struct trapframe *tf)
 
   // Check if the process has been killed since we yielded
   if(myproc() && myproc()->killed && (tf->cs&3) == DPL_USER)
-    exit(0);
+    exit();
 }

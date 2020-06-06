@@ -57,7 +57,7 @@ walkpgdir(pde_t *pgdir, const void *va, int alloc)
 // Create PTEs for virtual addresses starting at va that refer to
 // physical addresses starting at pa. va and size might not
 // be page-aligned.
-static int
+int
 mappages(pde_t *pgdir, void *va, uint size, uint pa, int perm)
 {
   char *a, *last;
@@ -313,45 +313,29 @@ clearpteu(pde_t *pgdir, char *uva)
 // Given a parent process's page table, create a copy
 // of it for a child.
 pde_t*
-copyuvm(pde_t *pgdir, uint sz, uint stack_size)
+copyuvm(pde_t *pgdir, uint sz)
 {
-    pde_t *d;
-    pte_t *pte;
-    uint pa, i, flags;
-    char *mem;
+  pde_t *d;
+  pte_t *pte;
+  uint pa, i, flags;
+  char *mem;
 
-    if((d = setupkvm()) == 0)
-        return 0;
-    for(i = 0; i < sz; i += PGSIZE){
-        if((pte = walkpgdir(pgdir, (void *) i, 0)) == 0)
-            panic("copyuvm: pte should exist");
-        if(!(*pte & PTE_P))
-            panic("copyuvm: page not present");
-        pa = PTE_ADDR(*pte);
-        flags = PTE_FLAGS(*pte);
-        if((mem = kalloc()) == 0)
-            goto bad;
-        memmove(mem, (char*)P2V(pa), PGSIZE);
-        if(mappages(d, (void*)i, PGSIZE, V2P(mem), flags) < 0) {
-            kfree(mem);
-            goto bad;
-        }
-    }
-
-    for(i = KERNBASE - PGSIZE; stack_size > 0; i -= PGSIZE, stack_size--){
-        if((pte = walkpgdir(pgdir, (void *) i, 0)) == 0)
-            panic("copyuvm: pte should exist");
-        if(!(*pte & PTE_P))
-            panic("copyuvm: page not present");
-        pa = PTE_ADDR(*pte);
-        flags = PTE_FLAGS(*pte);
-        if((mem = kalloc()) == 0)
-            goto bad;
-        memmove(mem, (char*)P2V(pa), PGSIZE);
-        if(mappages(d, (void*)i, PGSIZE, V2P(mem), flags) < 0)
-            goto bad;
-    }
-    return d;
+  if((d = setupkvm()) == 0)
+    return 0;
+  for(i = 0; i < sz; i += PGSIZE){
+    if((pte = walkpgdir(pgdir, (void *) i, 0)) == 0)
+      panic("copyuvm: pte should exist");
+    if(!(*pte & PTE_P))
+      panic("copyuvm: page not present");
+    pa = PTE_ADDR(*pte);
+    flags = PTE_FLAGS(*pte);
+    if((mem = kalloc()) == 0)
+      goto bad;
+    memmove(mem, (char*)P2V(pa), PGSIZE);
+    if(mappages(d, (void*)i, PGSIZE, V2P(mem), flags) < 0)
+      goto bad;
+  }
+  return d;
 
 bad:
   freevm(d);
