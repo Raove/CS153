@@ -36,7 +36,6 @@ int shm_open(int id, char **pointer) {
 
     acquire(&(shm_table.lock));
 
-    // If segment already exists
     for(i = 0; i < 64; i++){
         if(shm_table.shm_pages[i].id == id){
             pgdir = myproc()->pgdir;
@@ -52,8 +51,6 @@ int shm_open(int id, char **pointer) {
         }
     }
 
-
-    // If segment does not exist
     for(i = 0; i < 64; i++){
         if(shm_table.shm_pages[i].id == 0){
             shm_table.shm_pages[i].id = id;
@@ -74,7 +71,7 @@ int shm_open(int id, char **pointer) {
     }
 
     release( &(shm_table.lock) );
-    return 0; //added to remove compiler warning -- you should decide what to return
+    return 0;
 }
 
 
@@ -94,5 +91,5 @@ int shm_close(int id) {
     }
 
     release(&(shm_table.lock));
-    return 0; //added to remove compiler warning -- you should decide what to return
+    return 0;
 }
